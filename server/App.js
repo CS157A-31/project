@@ -37,7 +37,6 @@ app.use(cors());
 app.get('/', (req, res) => {
   return res.status(200).json({
     status: 'Home page success',
-    data: 'test',
   });
 });
 
