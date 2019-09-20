@@ -1,5 +1,9 @@
 # Smart Group Financial
 
+- Please click here to see the [Project Proposal](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Proposal_Team31.pdf).
+
+- Please click here to see the [Project Proposal](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Requirements.pdf).
+
 ## Project Overview 
 **Problem Statement:**
 When you’re on a trip with a group of friends, Person A spends $95 on food, Person B spends about $50 on gas, and Person C spends $100 on amenities. Then, it will be significantly time consuming to figure out how much one should pay back to another. Some groups use Excel, but they have to create their own formula, which might result in mistakes and take even more time to fix and re-calculate again. Additionally, there is a possibility that they may request the wrong amount of money. This can lead to problems with trust issues, misunderstandings, and uneven money distribution. As a result, we want to create an application that will not only solve these issues, but also provide everything needed to manage a trip on one platform. 
