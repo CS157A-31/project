@@ -51,6 +51,36 @@ User will be redirected to result page for new event
 Exceptions:
 If the user does not completely fill out Event information form an error message will be displayed
 
+
+```
+User is able to create groups and add other users to that group
+ Goal: User can click on “Create Group” and add other users within that group for an event/trip
+ Functional Processes:
+ Input: User logs into the application, clicks on the button to create a group, and inputs other usernames to add within the group. 
+ Output: An invitation to others will be sent which they can accept and join the group.
+ Prerequisites:
+ User is logged into their account
+ Users that group created is trying to add exist in the system’s database (Tracked by email address)
+ Post-Condition:
+ New group is added to the database and all affiliated users are tied to it
+ Exceptions:
+ If the user tries to invite a member that does not exist and error message will be thrown
+ If the user is not logged in to their account they will not have access to the “Create New Group” menu
+ 
+User is able to add a category that he/she pays within those events 
+ Goal: User enters the category of what they pay for, then the app will calculate and display the right amount for each person in the events.
+ Functional Processes:
+  - Input: The category that they pay for (food, gas, etc.) and the amount of money they pay. Users can input specifics, such as locations, restaurant names, etc.
+  - Output: A real-time update to display the charges for each person.
+ Prerequisite:
+  User is already a member of an event
+  Creator of the event is notified and must verify payment
+ Post-Condition:
+  New payment information will be applied to the event and database will be updated
+ Exceptions:
+  If event creator does not verify payment it is voided
+```
+
 ## Installation
 
 To clone and run this repository you'll need:
