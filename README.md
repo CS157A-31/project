@@ -22,37 +22,37 @@ HW/SW: Desktop Web Browser, Mac, Windows, Linux
 The architecture of our application is based on a typical MVC model. Our Client tier (View) will be written in Javascript, HTML, and CSS, using ReactJS as the framework. This level of the architecture is what the user will interact with to access the features of our application. The Business Logic Tier (Controller) will be written using NodeJs and ExpressJS, and this tier represents the Application Server that will act as the bridge of communication for the Client Tier and Database Tier. This tier will serve HTML pages to the user's device and accept HTTP requests from the user and follow with the appropriate response. Our Database Tier (Model) will be hosting MySQL as our application’s Relational Database Management System. This is where we will store all of the crucial data our application needs to function.
 
 ## Functional Requirements
-Any user is able to login/register/logout an account
-Goal: 
-A new user can register an account with our app or log in with their Facebook/Google credentials 
-Functional Processes: 
-Input: Email/Password
-Output: Redirect to the user dashboard/homepage
-Prerequisite:
-User should be able to make a new account with active email, Facebook, or Google credentials 
-User should be able to log in with correct email and password combination
-Post-Condition:
-The user will be redirected to the dashboard/homepage where they will be able to see options to view their profile, groups, and events.
-Exceptions:
-If the user inputs the wrong email/password combination, an error message will be displayed. 
-User is able to create any events
-Goal: 
-Registered user clicks a “Create Event” button to create a new event/trip
-Functional Processes:
-Input: User will log in to the web app, and click on the “Create Event” button. Fill in the form with the event: name, date, location, and description.
-Output: The page will be redirected to the new event page where they can start adding users and money they spend on the trip
- Const express = require(‘express’);
-Prerequisite:
-User is logged into their account
-User completely fills out the form for event information
-Post-Condition:
-Event will be created and added to the database
-User will be redirected to result page for new event
-Exceptions:
-If the user does not completely fill out Event information form an error message will be displayed
-
-
 ```
+Any user is able to login/register/logout an account
+ Goal: 
+ A new user can register an account with our app or log in with their Facebook/Google credentials 
+ Functional Processes: 
+ Input: Email/Password
+ Output: Redirect to the user dashboard/homepage
+ Prerequisite:
+ User should be able to make a new account with active email, Facebook, or Google credentials 
+ User should be able to log in with correct email and password combination
+ Post-Condition:
+ The user will be redirected to the dashboard/homepage where they will be able to see options to view their profile, groups, and events.
+ Exceptions:
+ If the user inputs the wrong email/password combination, an error message will be displayed. 
+ 
+User is able to create any events
+ Goal: 
+ Registered user clicks a “Create Event” button to create a new event/trip
+ Functional Processes:
+ Input: User will log in to the web app, and click on the “Create Event” button. Fill in the form with the event: name, date, location, and description.
+ Output: The page will be redirected to the new event page where they can start adding users and money they spend on the trip
+  Const express = require(‘express’);
+ Prerequisite:
+ User is logged into their account
+ User completely fills out the form for event information
+ Post-Condition:
+ Event will be created and added to the database
+ User will be redirected to result page for new event
+ Exceptions:
+ If the user does not completely fill out Event information form an error message will be displayed
+
 User is able to create groups and add other users to that group
  Goal: User can click on “Create Group” and add other users within that group for an event/trip
  Functional Processes:
@@ -79,9 +79,7 @@ User is able to add a category that he/she pays within those events
   New payment information will be applied to the event and database will be updated
  Exceptions:
   If event creator does not verify payment it is voided
-```
-
-```
+  
 User is able to see a history of changes in the events
  Goal: 
  User can refer back to details (group members, total, location) of past or favorite events
@@ -94,6 +92,7 @@ User is able to see a history of changes in the events
  User will be redirected to a History page that displays a list of all the past events they were apart of
  Exceptions:
  If the user was not previously apart of any events they will be shown an empty result page
+ 
 User is able to sort their list of events by time 
 Goal:
  User will be able to sort their list of events in chronological order
@@ -109,24 +108,25 @@ Goal:
  If the user only has one event listed the sort function will have no  effect on the list
 ```
 ## Non-functional Requirement
+```
 Implementation
-Develop a responsive web application in HTML/CSS/JavaScript, and ReactJS library for real-time update 
-Host and language the database/application server on Google Cloud Platform
+- Develop a responsive web application in HTML/CSS/JavaScript, and ReactJS library for real-time update 
+- Host and language the database/application server on Google Cloud Platform
 Usability
-The application shall be displayed in English.
+- The application shall be displayed in English.
 Reliability
-Support on major internet browsers such as Google Chrome.
+- Support on major internet browsers such as Google Chrome.
 Performance
-Respond to the user’s action and query data within 5 seconds.
+- Respond to the user’s action and query data within 5 seconds.
 Security
-Use JWT to authenticate and check for the user’s identity to protect users’ privacy
+- Use JWT to authenticate and check for the user’s identity to protect users’ privacy
 Scalability
-Multiple users will be able to access the application’s database without any latency issues
-The application will be able to serve multiple users at once
+- Multiple users will be able to access the application’s database without any latency issues
+- The application will be able to serve multiple users at once
 Packaging
-Application will be available to use on these platforms without any additional setup:
+- Application will be available to use on these platforms without any additional setup:
 Windows and Mac
-
+```
 ## Installation
 
 To clone and run this repository you'll need:
