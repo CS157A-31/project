@@ -80,6 +80,34 @@ User is able to add a category that he/she pays within those events
  Exceptions:
   If event creator does not verify payment it is voided
 ```
+
+```
+User is able to see a history of changes in the events
+ Goal: 
+ User can refer back to details (group members, total, location) of past or favorite events
+ Functional Processes:
+ Input: User presses the “History” button
+ Output: List of all user’s past events and that event’s info
+ Prerequisite:
+ User has past events that can be displayed
+ Post-Condition:
+ User will be redirected to a History page that displays a list of all the past events they were apart of
+ Exceptions:
+ If the user was not previously apart of any events they will be shown an empty result page
+User is able to sort their list of events by time 
+Goal:
+ User will be able to sort their list of events in chronological order
+ Functional Processes:
+ Input: On the History page, user will click drop down sort button and choose how they want the list sorted
+ Output: A sorted list will be presented to the user
+ Prerequisite:
+ There are a list of events displaying on the UI
+ Post-Condition:
+ The list will be sorted based on the time it is created
+ Exceptions:
+ If the user has no history of events there will be nothing to sort
+ If the user only has one event listed the sort function will have no  effect on the list
+```
 ## Non-functional Requirement
 Implementation
 Develop a responsive web application in HTML/CSS/JavaScript, and ReactJS library for real-time update 
