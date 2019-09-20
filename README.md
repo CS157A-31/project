@@ -1,5 +1,19 @@
 # Smart Group Financial
 
+## Project Overview 
+**Problem Statement**: 
+When you’re on a trip with a group of friends, Person A spends $95 on food, Person B spends about $50 on gas, Person C spends $100 on amenities. Then, it will take a lot of time to figure out who should pay back an amount of money to the right person. Some groups use Excel, but they have to create their own formula, which might result in mistakes and take even more time to fix and re-calculate again, or there is a possibility that they may request the wrong amount of money. This can lead to problems with trust issues, misunderstandings, or uneven money distribution. 
+**Stakeholders**: This app focuses on any travel group
+**Solution**: 
+We want to develop an application that will serve as a platform for various groups to manage their events, event members, and finances involved with the event. The app will allow users to create different parties/trips/planners, invite other users of the app to be apart of the event, and enter the amount of money that each person has contributed to the event. Finally, the app will assist in calculating the total amount spent on the event, and then generate the amount of money that one person in the group may owe another. This will in effect create a way to fairly distribute the expenses used for the event.
+**Possible Data Model**:
+Entities
+- User (first name, last name, like a profile, etc., 1 user can create/own many events/trips)
+- Events: id, name, location, time, 1 event will contain a list of users participate in that specific event, multiple categories, a history of who changes the price
+- Categories: (Title, amount of money)
+- Groups: store a list of users, can store many events
+- History of events: List of users, and event’s information 
+
 ## System Environment 
 
 HW/SW: Desktop Web Browser, Mac, Windows, Linux
