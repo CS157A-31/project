@@ -2,7 +2,7 @@
 
 - Please click here to see the [Project Proposal](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Proposal_Team31.pdf).
 
-- Please click here to see the [Project Proposal](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Requirements.pdf).
+- Please click here to see the [Project requirement](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Requirements.pdf).
 
 ## Project Overview 
 **Problem Statement:**
