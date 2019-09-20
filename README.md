@@ -80,6 +80,24 @@ User is able to add a category that he/she pays within those events
  Exceptions:
   If event creator does not verify payment it is voided
 ```
+## Non-functional Requirement
+Implementation
+Develop a responsive web application in HTML/CSS/JavaScript, and ReactJS library for real-time update 
+Host and language the database/application server on Google Cloud Platform
+Usability
+The application shall be displayed in English.
+Reliability
+Support on major internet browsers such as Google Chrome.
+Performance
+Respond to the user’s action and query data within 5 seconds.
+Security
+Use JWT to authenticate and check for the user’s identity to protect users’ privacy
+Scalability
+Multiple users will be able to access the application’s database without any latency issues
+The application will be able to serve multiple users at once
+Packaging
+Application will be available to use on these platforms without any additional setup:
+Windows and Mac
 
 ## Installation
 
