@@ -21,6 +21,36 @@ HW/SW: Desktop Web Browser, Mac, Windows, Linux
 **Overview**:
 The architecture of our application is based on a typical MVC model. Our Client tier (View) will be written in Javascript, HTML, and CSS, using ReactJS as the framework. This level of the architecture is what the user will interact with to access the features of our application. The Business Logic Tier (Controller) will be written using NodeJs and ExpressJS, and this tier represents the Application Server that will act as the bridge of communication for the Client Tier and Database Tier. This tier will serve HTML pages to the user's device and accept HTTP requests from the user and follow with the appropriate response. Our Database Tier (Model) will be hosting MySQL as our application’s Relational Database Management System. This is where we will store all of the crucial data our application needs to function.
 
+## Functional Requirements
+Any user is able to login/register/logout an account
+Goal: 
+A new user can register an account with our app or log in with their Facebook/Google credentials 
+Functional Processes: 
+Input: Email/Password
+Output: Redirect to the user dashboard/homepage
+Prerequisite:
+User should be able to make a new account with active email, Facebook, or Google credentials 
+User should be able to log in with correct email and password combination
+Post-Condition:
+The user will be redirected to the dashboard/homepage where they will be able to see options to view their profile, groups, and events.
+Exceptions:
+If the user inputs the wrong email/password combination, an error message will be displayed. 
+User is able to create any events
+Goal: 
+Registered user clicks a “Create Event” button to create a new event/trip
+Functional Processes:
+Input: User will log in to the web app, and click on the “Create Event” button. Fill in the form with the event: name, date, location, and description.
+Output: The page will be redirected to the new event page where they can start adding users and money they spend on the trip
+ Const express = require(‘express’);
+Prerequisite:
+User is logged into their account
+User completely fills out the form for event information
+Post-Condition:
+Event will be created and added to the database
+User will be redirected to result page for new event
+Exceptions:
+If the user does not completely fill out Event information form an error message will be displayed
+
 ## Installation
 
 To clone and run this repository you'll need:
