@@ -7,6 +7,13 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import passport from 'passport';
 
+<<<<<<< HEAD
+import { config } from './config/global';
+
+import { userController } from './controller';
+
+import { connection } from './database/mysql';
+=======
 import {
   config
 } from './config/global';
@@ -14,10 +21,7 @@ import {
 import {
   userController,
 } from './controller';
-
-import {
-  connection
-} from './database/mysql'
+>>>>>>> restructure the server folder
 
 var app = express();
 
@@ -25,6 +29,20 @@ var app = express();
 // applyPassportStrategy(passport);
 
 app.use(express.json());
+<<<<<<< HEAD
+app.use(
+  express.urlencoded({
+    extended: false
+  })
+);
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+=======
 app.use(express.urlencoded({
   extended: false
 }));
@@ -33,30 +51,75 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+>>>>>>> restructure the server folder
 app.use(bodyParser.json());
 
 // Set up CORS
 app.use(cors());
+<<<<<<< HEAD
 
 app.get('/', (req, res) => {
-  connection.getConnection( (err, tempCon) => {
-    if(err){
+  connection.getConnection((err, tempCon) => {
+    if (err) {
       // tempCon.release();
-      console.log('Error: '+err);
-    } else{
-      console.log('Connected to db!');
-  
-      tempCon.query('SELECT * from GOT', (err, rows, fields) => {
+      console.log('Error: ' + err);
+    } else {
+      console.log('Connected to db! Login');
+
+      tempCon.query('SELECT * from GOT', (err, data, fields) => {
         tempCon.release();
-        if (err){
-          console.log('Error while performing Query.'+err);
+        if (err) {
+          console.log('Error while performing Query.' + err);
         } else {
-          rows.forEach((row) => console.log(row.firstName));
-          //console.log(rows);
-          res.json(rows);
+          const returnData = { ...data };
+          console.log(returnData);
+          res.status(200).json(returnData);
         }
       });
     }
+  });
+});
+
+app.post('/register', (req, res) => {
+  connection.getConnection((err, tempCon) => {
+    if (err) {
+      res.status(500).json(err);
+      console.log('Error: ' + err);
+    } else {
+      console.log('Insert Calvin to db');
+
+      tempCon.query(
+        `insert into GOT values(null, 'Calvin', 'Nguyen')`,
+        (err, token) => {
+          if (err) {
+            res.status(500).json(err);
+            console.log('Error while performing Query.' + err);
+          } else {
+            tempCon.query('SELECT * from GOT', (error, data) => {
+              tempCon.release();
+              if (error) {
+                res.status(500).json(err);
+                console.log('Error while retrieveing data: ' + err);
+              } else {
+                const returnData = { ...{ data } };
+                console.log(returnData);
+                res.status(200).json(returnData);
+              }
+            });
+          }
+        }
+      );
+    }
+=======
+
+app.get('/', (req, res) => {
+  return res.status(200).json({
+    status: 'Home page success',
+<<<<<<< HEAD
+>>>>>>> restructure the server folder
+=======
+    data: 'test',
+>>>>>>> setup frontend
   });
 });
 
@@ -81,11 +144,19 @@ app.use(function (err, req, res, next) {
 /**
  * Get port from environment and store in Express.
  */
+<<<<<<< HEAD
+const { port } = config.env;
+=======
 const {
   port
 } = config.env;
+>>>>>>> restructure the server folder
 
 app.listen(port, () => {
   logger.info(`Started successfully server at port ${port}`);
   // Connect MySQL
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> restructure the server folder

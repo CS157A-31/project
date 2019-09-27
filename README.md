@@ -1,9 +1,16 @@
 # Smart Group Financial
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Project Description
 - Please click here to see the [Project Proposal](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Proposal_Team31.pdf).
 
 - Please click here to see the [Project requirement](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Requirements.pdf).
 
+<<<<<<< HEAD
 ## Project Overview 
 **Problem Statement:**
 When you’re on a trip with a group of friends, Person A spends $95 on food, Person B spends about $50 on gas, and Person C spends $100 on amenities. Then, it will be significantly time consuming to figure out how much one should pay back to another. Some groups use Excel, but they have to create their own formula, which might result in mistakes and take even more time to fix and re-calculate again. Additionally, there is a possibility that they may request the wrong amount of money. This can lead to problems with trust issues, misunderstandings, and uneven money distribution. As a result, we want to create an application that will not only solve these issues, but also provide everything needed to manage a trip on one platform. 
@@ -19,6 +26,27 @@ Groups: store a list of users, can store many events
 History of events: List of users, and event’s information 
 
 
+=======
+>>>>>>> new form for login (#11)
+=======
+=======
+>>>>>>> Update Project Description
+## Project Overview 
+**Problem Statement:**
+When you’re on a trip with a group of friends, Person A spends $95 on food, Person B spends about $50 on gas, and Person C spends $100 on amenities. Then, it will be significantly time consuming to figure out how much one should pay back to another. Some groups use Excel, but they have to create their own formula, which might result in mistakes and take even more time to fix and re-calculate again. Additionally, there is a possibility that they may request the wrong amount of money. This can lead to problems with trust issues, misunderstandings, and uneven money distribution. As a result, we want to create an application that will not only solve these issues, but also provide everything needed to manage a trip on one platform. 
+**Stakeholders:** This app focuses on any travel group
+**Project Description:** 
+We want to develop a database application that will serve as a platform for various groups to manage their events, event members, and finances involved with the event. The app will allow users to create different parties/trips/planners, invite other users of the app to be apart of the event, and enter the amount of money that each person has contributed to the event. Finally, the app will assist in calculating the total amount spent on the event, and then generate the amount of money that one person in the group may owe another. This will in effect create a way to fairly distribute the expenses used for the event.This application will also have a user-friendly interface that will allow users to easily take advantage of these properties. 
+**Possible Data Model:**
+	Entities
+User (first name, last name, like a profile, etc., 1 user can create/own many events/trips)
+Events: id, name, location, time, 1 event will contain a list of users participate in that specific event, multiple categories, a history of who changes the price
+Categories: (Title, amount of money)
+Groups: store a list of users, can store many events
+History of events: List of users, and event’s information 
+
+
+>>>>>>> Update Project Overview
 ## System Environment 
 
 HW/SW: Desktop Web Browser, Mac, Windows, Linux
@@ -26,6 +54,10 @@ HW/SW: Desktop Web Browser, Mac, Windows, Linux
 **Overview**:
 The architecture of our application is based on a typical MVC model. Our Client tier (View) will be written in Javascript, HTML, and CSS, using ReactJS as the framework. This level of the architecture is what the user will interact with to access the features of our application. The Business Logic Tier (Controller) will be written using NodeJs and ExpressJS, and this tier represents the Application Server that will act as the bridge of communication for the Client Tier and Database Tier. This tier will serve HTML pages to the user's device and accept HTTP requests from the user and follow with the appropriate response. Our Database Tier (Model) will be hosting MySQL as our application’s Relational Database Management System. This is where we will store all of the crucial data our application needs to function.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update Project Overview
 ## Functional Requirements
 ```
 Any user is able to login/register/logout an account
@@ -132,6 +164,13 @@ Packaging
 - Application will be available to use on these platforms without any additional setup:
 Windows and Mac
 ```
+<<<<<<< HEAD
+=======
+>>>>>>> restructure the server folder
+=======
+>>>>>>> new form for login (#11)
+=======
+>>>>>>> Update Project Overview
 ## Installation
 
 To clone and run this repository you'll need:

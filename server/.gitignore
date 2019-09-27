@@ -61,4 +61,7 @@ typings/
 .next
 
 package-lock.json
+<<<<<<< HEAD
 database/config.js
+=======
+>>>>>>> restructure the server folder

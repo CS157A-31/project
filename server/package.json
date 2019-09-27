@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "node -r esm app.js",
+=======
+    "start": "ENV=prod node -r esm app.js",
+>>>>>>> restructure the server folder
     "dev": "ENV=dev nodemon -r esm app.js"
   },
   "dependencies": {
@@ -14,6 +18,10 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+<<<<<<< HEAD
+    "mysql": "^2.17.1",
+=======
+>>>>>>> restructure the server folder
     "passport": "^0.4.0",
     "pug": "2.0.0-beta11",
     "winston": "^3.2.1"
@@ -29,7 +37,11 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+<<<<<<< HEAD
     "eslint-plugin-react-hooks": "^1.7.0",
     "nodemon": "^1.19.2"
+=======
+    "eslint-plugin-react-hooks": "^1.7.0"
+>>>>>>> restructure the server folder
   }
 }
