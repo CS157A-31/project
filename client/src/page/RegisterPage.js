@@ -8,6 +8,7 @@ import { attemptRegister } from '../actions/register/registerApiCall';
 import Register from '../components/auth/Register.js';
 
 class RegisterPage extends Component {
+
   constructor() {
     super();
     this.state = {
