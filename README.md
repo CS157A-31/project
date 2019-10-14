@@ -4,6 +4,8 @@
 
 - Please click here to see the [Project requirement](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Requirements.pdf).
 
+- Please click here to see the [Project Design](https://github.com/CS157A-Team-31/Smart-Group-Financial/blob/master/Project%20Workbook.docx).
+
 ## Installation
 
 To clone and run this repository you'll need:
