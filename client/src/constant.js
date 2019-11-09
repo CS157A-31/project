@@ -7,6 +7,7 @@ export const LOGIN_URI = '/login';
 export const GET_ERRORS = "GET_ERRORS";
 
 // Register
+<<<<<<< HEAD
 export const ATTEMPT_REGISTER_FAILED = "ATTEMPT_REGISTER_FAILED";
 export const ATTEMPT_REGISTER_SUCCESSFULLY = "ATTEMPT_REGISTER_SUCCESSFULLY";
 
@@ -23,3 +24,11 @@ export const TOKEN_NOT_FOUND = "TOKEN_NOT_FOUND";
 export const USER_ID = "userID";
 export const NULL_ID = "NULL_ID";
 export const SET_USER_ID = "SET_USER_ID";
+=======
+export const ATTEMPT_REGISTER_FAILED = 'ATTEMPT_REGISTER_FAILED';
+export const ATTEMPT_REGISTER_SUCCESSFULLY = 'ATTEMPT_REGISTER_SUCCESSFULLY';
+
+// Login
+export const ATTEMPT_REGISTER_FAILED = 'ATTEMPT_LOGIN_FAILED';
+export const ATTEMPT_REGISTER_SUCCESSFULLY = 'ATTEMPT_LOGIN_SUCCESSFULLY';
+>>>>>>> Initial Login page setup
