@@ -10,9 +10,6 @@ const Login = props => {
             <h4>
               <b>Login</b>
             </h4>
-            <p className='grey-text text-darken-1'>
-              Don't have an account? <Link to='/register'>Register</Link>
-            </p>
           </div>
           <form noValidate onSubmit={props.onClick}>
             <div className='input-field col s12'>
@@ -38,6 +35,9 @@ const Login = props => {
                 name='password'
               />
               {/* <label htmlFor='password'>Password</label> */}
+              <p className='grey-text text-darken-1'>
+              Don't have an account? <Link to='/register'>Register</Link>
+            </p>
             </div>
             <div className='col s12' style={{ paddingLeft: '11.250px' }}>
               <button

@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Redirect, withRouter } from "react-router-dom";
 
-//import { attemptRegister } from "../actions/register/registerApiCall";
+import { attemptLogin } from "../actions/login/loginApiCall";
 
 import Login from "../components/auth/Login.js";
 
-class RegisterPage extends Component {
+class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,10 +26,10 @@ class RegisterPage extends Component {
   onClick = e => {
     e.preventDefault();
 
-    // this.props.attemptRegister({
-    //   email: this.state.email,
-    //   password: this.state.password
-    // });
+    this.props.attemptLogin({
+      email: this.state.email,
+      password: this.state.password
+    });
   };
 
   render() {
@@ -39,10 +39,7 @@ class RegisterPage extends Component {
     const user = this.props.user || {};
 
     return user.email ? (
-      <div className="container">
-        <h1>User Login</h1>
-        Email: {user.email}
-      </div>
+      <Redirect to="/" />
     ) : (
       <Login
         onChange={e => this.onChange(e)}
@@ -64,10 +61,10 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ attemptRegister }, dispatch);
+  return bindActionCreators({ attemptLogin }, dispatch);
 }
 
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(withRouter(RegisterPage));
+)(withRouter(LoginPage));

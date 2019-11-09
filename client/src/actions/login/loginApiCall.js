@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 import {
-  attemptRegisterSuccessfully,
-  attemptRegisterFailed
+  attemptLoginSuccessfully,
+  attemptLoginFailed
 } from './attemptLoginAction';
 
 import { HOST, LOGIN_URI } from '../../constant';
@@ -14,7 +14,8 @@ export const attemptLogin = userData => dispatch => {
     .then(res => {
       console.log('attempt login callAPI');
       console.log(res.data);
-      dispatch(attemptLoginSuccessfully(res.data));
+      const payload = dispatch(attemptLoginSuccessfully(res.data));
+      return payload;
     })
     .catch(err => {
       console.log('error');
