@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { Redirect, withRouter } from "react-router-dom";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { attemptLogin } from "../actions/login/loginApiCall";
 
 import Login from "../components/auth/Login.js";
@@ -16,6 +17,13 @@ import Login from "../components/auth/Login.js";
 
 class RegisterPage extends Component {
 >>>>>>> Initial Login page setup
+=======
+import { attemptLogin } from "../actions/login/loginApiCall";
+
+import Login from "../components/auth/Login.js";
+
+class LoginPage extends Component {
+>>>>>>> Integrated server API call
   constructor() {
     super();
     this.state = {
@@ -35,16 +43,22 @@ class RegisterPage extends Component {
     e.preventDefault();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Integrated server API call
     this.props.attemptLogin({
       email: this.state.email,
       password: this.state.password
     });
+<<<<<<< HEAD
 =======
     // this.props.attemptRegister({
     //   email: this.state.email,
     //   password: this.state.password
     // });
 >>>>>>> Initial Login page setup
+=======
+>>>>>>> Integrated server API call
   };
 
   render() {
@@ -84,17 +98,25 @@ function mapStateToProps(state) {
 
 function matchDispatchToProps(dispatch) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return bindActionCreators({ attemptLogin }, dispatch);
 =======
   return bindActionCreators({ attemptRegister }, dispatch);
 >>>>>>> Initial Login page setup
+=======
+  return bindActionCreators({ attemptLogin }, dispatch);
+>>>>>>> Integrated server API call
 }
 
 export default connect(
   mapStateToProps,
   matchDispatchToProps
 <<<<<<< HEAD
+<<<<<<< HEAD
 )(withRouter(LoginPage));
 =======
 )(withRouter(RegisterPage));
 >>>>>>> Initial Login page setup
+=======
+)(withRouter(LoginPage));
+>>>>>>> Integrated server API call
