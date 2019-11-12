@@ -14,14 +14,19 @@ class GroupPage extends Component {
             errors: {}
         };
         this.onChange = this.onChange.bind(this);
+<<<<<<< HEAD
         this.onMemberClick = this.onClick.bind(this);
         this.onEventClick = this.onClick.bind(this);
+=======
+        this.onClick = this.onClick.bind(this);
+>>>>>>> Initial setup for group page
     }
 
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
     
+<<<<<<< HEAD
     onMemberClick = e => {
         e.preventDefault();
     
@@ -35,6 +40,17 @@ class GroupPage extends Component {
         e.preventDefault();
     }
 
+=======
+    onClick = e => {
+        e.preventDefault();
+    
+        this.props.attemptLogin({
+          email: this.state.email,
+          password: this.state.password
+        });
+    };
+
+>>>>>>> Initial setup for group page
     render() {
         const errors = { ...this.state.errors };
         const group = { ...this.state.group };
