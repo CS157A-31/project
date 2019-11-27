@@ -69,4 +69,3 @@ export default connect(
   mapStateToProps,
   matchDispatchToProps
 )(withRouter(LoginPage));
-
