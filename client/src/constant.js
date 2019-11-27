@@ -2,6 +2,7 @@ export const HOST = "http://localhost:8080";
 
 export const REGISTER_URI = '/register';
 export const LOGIN_URI = '/login';
+export const PARTY_URI = '/party';
 
 // Errors
 export const GET_ERRORS = "GET_ERRORS";
@@ -36,4 +37,13 @@ export const ATTEMPT_REGISTER_SUCCESSFULLY = 'ATTEMPT_LOGIN_SUCCESSFULLY';
 =======
 export const ATTEMPT_LOGIN_FAILED = 'ATTEMPT_LOGIN_FAILED';
 export const ATTEMPT_LOGIN_SUCCESSFULLY = 'ATTEMPT_LOGIN_SUCCESSFULLY';
+<<<<<<< HEAD
 >>>>>>> Integrated server API call
+=======
+
+// Party
+export const ATTEMPT_GET_PARTY_MEMBERS_FAILED = 'ATTEMPT_GET_PARTY_MEMBERS_FAILED';
+export const ATTEMPT_GET_PARTY_MEMBERS_SUCCESSFULLY = 'ATTEMPT_GET_PARTY_MEMBERS_SUCCESSFULLY';
+export const ATTEMPT_GET__PARTY_EVENTS_FAILED = 'ATTEMPT_GET_PARTY_EVENTS_FAILED';
+export const ATTEMPT_GET_PARTY_EVENTS_SUCCESSFULLY = 'ATTEMPT_GET_PARTY_EVENTS_SUCCESSFULLY';
+>>>>>>> Updated actions for group page
