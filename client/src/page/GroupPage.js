@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Redirect, withRouter } from "react-router-dom";
+
+import { attemptGetPartyMembers } from "../actions/party/getPartyMembersApiCall";
+import { attemptGetPartyEvents } from "../actions/party/getPartyEventsApiCall";
 
 import EventsList from '../group_page/EventsList.js';
 import Memberslist from '../group_page/MembersList.js';
@@ -13,20 +19,10 @@ class GroupPage extends Component {
             members: [],
             errors: {}
         };
-        this.onChange = this.onChange.bind(this);
-<<<<<<< HEAD
         this.onMemberClick = this.onClick.bind(this);
         this.onEventClick = this.onClick.bind(this);
-=======
-        this.onClick = this.onClick.bind(this);
->>>>>>> Initial setup for group page
     }
-
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-    };
     
-<<<<<<< HEAD
     onMemberClick = e => {
         e.preventDefault();
     
@@ -40,17 +36,6 @@ class GroupPage extends Component {
         e.preventDefault();
     }
 
-=======
-    onClick = e => {
-        e.preventDefault();
-    
-        this.props.attemptLogin({
-          email: this.state.email,
-          password: this.state.password
-        });
-    };
-
->>>>>>> Initial setup for group page
     render() {
         const errors = { ...this.state.errors };
         const group = { ...this.state.group };
@@ -60,7 +45,7 @@ class GroupPage extends Component {
         return (
             <div>
                 <h1>Group Page: {group.name}</h1> 
-                <EventList events={events}/>
+                <EventsList events={events}/>
                 <Memberslist members={members}/>
             </div>
         )
