@@ -51,7 +51,6 @@ class HomePage extends Component {
       <Redirect to={`/event/${this.state.selectedRow.eventID}`} />
     ) : (
       <div
-<<<<<<< HEAD
         style={{ height: '75vh', width: '75vh' }}
         className='container valign-wrapper '
       >
@@ -61,17 +60,6 @@ class HomePage extends Component {
               <ul
                 style={{ width: '75vh' }}
                 class='col s6 collection with-header'
-=======
-        style={{ height: "75vh", width: "75vh" }}
-        className="col s6 container valign-wrapper "
-      >
-        <div className="row">
-          <div className=" center-align">
-            <div className="col s12">
-              <ul
-                style={{ width: "75vh" }}
-                class="col s12 collection with-header"
->>>>>>> updating UI and routing
               >
                 <li class='collection-header'>
                   <h4>My Groups</h4>
@@ -102,17 +90,10 @@ class HomePage extends Component {
                 </li>
               </ul>
             </div>
-<<<<<<< HEAD
             <div className='col s6'>
               <ul
                 style={{ width: '75vh' }}
                 class='col s6 collection with-header'
-=======
-            <div className="col s12">
-              <ul
-                style={{ width: "75vh" }}
-                class="col s12 collection with-header"
->>>>>>> updating UI and routing
               >
                 <li class='collection-header'>
                   <h4>My Events</h4>
@@ -149,8 +130,6 @@ class HomePage extends Component {
     );
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 //Store
 function mapStateToProps(state) {
   return {
@@ -172,9 +151,3 @@ export default connect(
   mapStateToProps,
   matchDispatchToProps
 )(withRouter(HomePage));
-=======
-
-=======
->>>>>>> updating UI and routing
-export default HomePage;
->>>>>>> More UI

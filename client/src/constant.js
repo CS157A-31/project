@@ -1,19 +1,9 @@
 export const HOST = 'http://localhost:8080';
 
-<<<<<<< HEAD
 export const REGISTER_URI = '/register';
 export const LOGIN_URI = '/login';
 export const EVENT_URI = '/event';
 export const PARTY_URI = '/party';
-=======
-export const REGISTER_URI = "/register";
-export const LOGIN_URI = "/login";
-<<<<<<< HEAD
->>>>>>> More UI
-=======
-export const EVENTS_URI = "/events";
-export const GROUPS_URI = "/groups";
->>>>>>> updating UI and routing
 
 // Errors
 export const GET_ERRORS = 'GET_ERRORS';
@@ -23,14 +13,14 @@ export const ATTEMPT_REGISTER_FAILED = 'ATTEMPT_REGISTER_FAILED';
 export const ATTEMPT_REGISTER_SUCCESSFULLY = 'ATTEMPT_REGISTER_SUCCESSFULLY';
 
 // Create Group
-export const ATTEMPT_CREATE_GROUP_FAILED = "ATTEMPT_CREATE_GROUP_FAILED";
+export const ATTEMPT_CREATE_GROUP_FAILED = 'ATTEMPT_CREATE_GROUP_FAILED';
 export const ATTEMPT_CREATE_GROUP_SUCCESSFULLY =
-  "ATTEMPT_CREATE_GROUP_SUCCESSFULLY";
+  'ATTEMPT_CREATE_GROUP_SUCCESSFULLY';
 
 // Create Event
-export const ATTEMPT_CREATE_EVENT_FAILED = "ATTEMPT_CREATE_EVENT_FAILED";
+export const ATTEMPT_CREATE_EVENT_FAILED = 'ATTEMPT_CREATE_EVENT_FAILED';
 export const ATTEMPT_CREATE_EVENT_SUCCESSFULLY =
-  "ATTEMPT_CREATE_EVENT_SUCCESSFULLY";
+  'ATTEMPT_CREATE_EVENT_SUCCESSFULLY';
 
 // Login
 export const ATTEMPT_LOGIN_FAILED = 'ATTEMPT_LOGIN_FAILED';

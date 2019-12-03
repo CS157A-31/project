@@ -38,17 +38,10 @@ class LoginPage extends Component {
     const password = { ...this.state.password };
     const user = this.props.user || {};
     const { userID } = user;
-<<<<<<< HEAD
     console.log('User is: ' + user);
 
     return user.email && userID ? (
       <Redirect to='/home' />
-=======
-    console.log("User is: " + user);
-
-    return user.email && userID ? (
-      <Redirect to="/home" />
->>>>>>> Fix Login API and UI (#38)
     ) : (
       <Login
         onChange={e => this.onChange(e)}

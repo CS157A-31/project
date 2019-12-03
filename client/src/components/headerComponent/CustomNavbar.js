@@ -13,19 +13,11 @@ class CustomNavbar extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
       <div className='navbar-fixed'>
         <nav className='z-depth-0'>
           <div className='nav-wrapper white'>
             <a
               href='/'
-=======
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <a
-              to="/"
->>>>>>> updating UI and routing
               style={{
                 fontFamily: 'monospace'
               }}
@@ -34,17 +26,10 @@ class CustomNavbar extends Component {
               <i className='material-icons'>code</i>
               Smart Group Financial
             </a>
-<<<<<<< HEAD
             <ul className='right'>
               <li>
                 <a
                   href='/'
-=======
-            <ul className="right">
-              <li>
-                <a
-                  href="/creategroup"
->>>>>>> updating UI and routing
                   style={{
                     fontFamily: 'monospace'
                   }}
@@ -55,11 +40,7 @@ class CustomNavbar extends Component {
               </li>
               <li>
                 <a
-<<<<<<< HEAD
                   href='/'
-=======
-                  href="/createevent"
->>>>>>> updating UI and routing
                   style={{
                     fontFamily: 'monospace'
                   }}
@@ -70,12 +51,8 @@ class CustomNavbar extends Component {
               </li>
               <li>
                 <a
-<<<<<<< HEAD
                   href='/'
                   onClick={() => this.logout()}
-=======
-                  href="/"
->>>>>>> updating UI and routing
                   style={{
                     fontFamily: 'monospace'
                   }}

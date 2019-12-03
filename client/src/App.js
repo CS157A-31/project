@@ -6,24 +6,15 @@ import { bindActionCreators } from 'redux';
 
 import Navbar from './components/Navbar';
 
-<<<<<<< HEAD
 import CustomNavbar from './components/headerComponent/CustomNavbar';
 
 import RouterComponent from './route/RouterCompnent.js';
-=======
-import RouterComponent from "./route/RouterCompnent.js";
->>>>>>> More UI
 
 import { setUserToken } from './actions/setUserTokenAction';
 
 import { getUserIdentity } from './actions/getUserIdentity';
 
-<<<<<<< HEAD
 import { USER_ID } from './constant';
-=======
-import { USER_ID } from "./constant";
-import CustomNavbar from "./components/headerComponent/CustomNavbar";
->>>>>>> updating UI and routing
 
 class App extends Component {
   constructor(props) {
@@ -46,21 +37,11 @@ class App extends Component {
 
   render() {
     const user = this.props.user || {};
-<<<<<<< HEAD
     const isLogin = user.userID ? true : false;
 
     return isLogin ? (
       <div>
         <CustomNavbar onClick={this.logout} />
-=======
-    const isLogin = user.insertId ? true : false;
-    const { userID } = user;
-    console.log(userID);
-
-    return user.email && userID ? (
-      <div>
-        <CustomNavbar />
->>>>>>> updating UI and routing
         <RouterComponent isLogin={isLogin} user={user} />
       </div>
     ) : (
