@@ -40,6 +40,10 @@ class GroupPage extends Component {
             });
     }
 
+    // onEventClick = e => {
+    //     //e.preventDefault();
+    // }
+
     render() {
         return (
             <div>

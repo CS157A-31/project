@@ -21,8 +21,14 @@ partyController.get('/', (req, res) => {
  * GET/
  * Get ALL groups in the DB
  */
+<<<<<<< HEAD
 partyController.post('/members', (req, res) => {
   const { partyID } = req.body;
+=======
+partyController.get('/members', (req, res) => {
+  console.log('members', req);
+  const partyID = req.body.partyID;
+>>>>>>> Finished Group Page UI
 
   const getPartyMembersQuery = `SELECT email FROM User 
                                 JOIN (SELECT userID FROM User_Join_Party WHERE User_Join_Party.partyID=${partyID})a

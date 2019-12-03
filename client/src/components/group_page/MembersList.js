@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import AddMemberModal from './addMemberModal';
 
 const MembersList = props => {
+    console.log(props);
+
     return ( 
         <div>
             <div class='row valign-wrapper'>
                 <div class="col s5">
                     <h3> Group Members </h3>
                 </div>
+<<<<<<< HEAD
                 <AddMemberModal 
                     partyID={props.partyID}
                     invite={props.invite}
                 />
+=======
+                <AddMemberModal partyID={props.partyID}/>
+>>>>>>> Finished Group Page UI
             </div>
             <hr></hr>
             <ul class="collection with-header">
