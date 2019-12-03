@@ -9,13 +9,8 @@ import { HOST, PARTY_URI } from '../../constant';
 
 // Register
 export const attemptInvitePartyMember = userData => dispatch => {
-<<<<<<< HEAD
   return axios
     .post(`${HOST}${PARTY_URI+'/invite'}`, userData)
-=======
-  axios
-    .post(`${HOST}${PARTY_URI}`, userData)
->>>>>>> Finished Group Page UI
     .then(res => {
       console.log('attempt Invite member callAPI');
       console.log(res.data);

@@ -9,13 +9,8 @@ import { HOST, PARTY_URI } from '../../constant';
 
 // Register
 export const attemptGetPartyEvents = partyData => dispatch => {
-<<<<<<< HEAD
   return axios
     .post(`${HOST}${PARTY_URI+'/events'}`, partyData)
-=======
-  axios
-    .get(`${HOST}${PARTY_URI}`, partyData)
->>>>>>> Finished Group Page UI
     .then(res => {
       console.log('attempt get events callAPI');
       console.log(res.data);

@@ -53,15 +53,11 @@ export default function AddMemberModal(props) {
             onClose={handleClose}
          >
             <div style={modalStyle} className={classes.paper}>
-<<<<<<< HEAD
                 <AddMemberForm 
                   close={handleClose} 
                   partyID={props.partyID}
                   invite={props.invite
                 }/>
-=======
-                <AddMemberForm close={handleClose} partyID={props.partyID}/>
->>>>>>> Finished Group Page UI
             </div>
         </Modal>
     </div>
