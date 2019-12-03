@@ -3,23 +3,12 @@ import axios from "axios";
 import {
   attemptLoginSuccessfully,
   attemptLoginFailed
-<<<<<<< HEAD:client/src/apiCall/auth/loginApiCall.js
-} from '../../actions/auth/attemptLoginAction';
+} from "../../actions/auth/attemptLoginAction";
 
-import { HOST, LOGIN_URI, USER_ID } from '../../constant';
-=======
-} from "./attemptLoginAction";
-
-import { HOST, LOGIN_URI } from "../../constant";
->>>>>>> Group page (#42):client/src/actions/login/loginApiCall.js
+import { HOST, LOGIN_URI, USER_ID } from "../../constant";
 
 import { setTokenToLocalStorage } from "../../utils";
 
-<<<<<<< HEAD:client/src/apiCall/auth/loginApiCall.js
-=======
-import { USER_ID } from "../../constant";
-
->>>>>>> Group page (#42):client/src/actions/login/loginApiCall.js
 // Register
 export const attemptLogin = userData => dispatch => {
   axios

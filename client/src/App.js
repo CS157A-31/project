@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from "redux";
 
-import Navbar from './components/headerComponent/Navbar';
+import Navbar from "./components/headerComponent/Navbar";
 
-import CustomNavbar from './components/headerComponent/CustomNavbar';
+import CustomNavbar from "./components/headerComponent/CustomNavbar";
 
-import RouterComponent from './route/RouterCompnent.js';
+import RouterComponent from "./route/RouterCompnent.js";
 
-import { setUserToken } from './actions/auth/setUserTokenAction';
+import { setUserToken } from "./actions/auth/setUserTokenAction";
 
-import { USER_ID } from './constant';
+import { USER_ID } from "./constant";
 
 class App extends Component {
   constructor(props) {

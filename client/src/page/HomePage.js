@@ -3,13 +3,8 @@ import { Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-<<<<<<< HEAD
-import { attemptGetPartiesByUserId } from '../apiCall/party/getPartiesByUserIdApiCall';
-import { attemptGetEventsByUserId } from '../apiCall/event/getEventsByUserIdApiCall';
-=======
 import { attemptGetPartiesByUserId } from "../actions/homePage/getPartiesByUserIdApiCall";
 import { attemptGetEventsByUserId } from "../actions/homePage/getEventsByUserIdApiCall";
->>>>>>> Group page (#42)
 
 class HomePage extends Component {
   constructor(props) {
@@ -25,11 +20,7 @@ class HomePage extends Component {
     this.setState({ ...this.state, ...{ selectedRow } });
   }
 
-<<<<<<< HEAD
   async componentDidMount() {
-=======
-  componentDidMount() {
->>>>>>> Group page (#42)
     this.props
       .attemptGetEventsByUserId()
       .then(res => {
@@ -58,89 +49,6 @@ class HomePage extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    return this.state.selectedRow ? (
-      <Redirect to={`/event/${this.state.selectedRow.eventID}`} />
-    ) : (
-      <div
-        style={{ height: '75vh', width: '75vh' }}
-        className='container valign-wrapper '
-      >
-        <div className='row'>
-          <div className=' center-align'>
-            <div className='col s6'>
-              <ul
-                style={{ width: '75vh' }}
-                class='col s6 collection with-header'
-              >
-                <li class='collection-header'>
-                  <h4>My Partys</h4>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Party 1
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Party 2
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Party 3
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className='col s6'>
-              <ul
-                style={{ width: '75vh' }}
-                class='col s6 collection with-header'
-              >
-                <li class='collection-header'>
-                  <h4>My Events</h4>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Event 1
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Event 2
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-                <li class='collection-item'>
-                  <div>
-                    Event 3
-                    <a href='#!' class='secondary-content'>
-                      <i class='material-icons'>send</i>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-=======
     const events = this.state.events || [];
     //const eventsTable = this.state.events || [];
     // const parties = this.state.parties || [];
@@ -239,7 +147,6 @@ class HomePage extends Component {
     //       </div>
     //     </div>
     //   </div>
->>>>>>> Group page (#42)
   }
 }
 //Store
