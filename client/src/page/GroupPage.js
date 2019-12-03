@@ -21,7 +21,6 @@ class GroupPage extends Component {
             members: [],
             errors: {}
         };
-        // this.onEventClick = this.onClick.bind(this);
     }
     
     async componentWillMount() {
@@ -39,10 +38,6 @@ class GroupPage extends Component {
                 });
             });
     }
-
-    // onEventClick = e => {
-    //     //e.preventDefault();
-    // }
 
     render() {
         return (

@@ -16,7 +16,7 @@ const MembersList = props => {
             <hr></hr>
             <ul class="collection with-header">
                 {props.members.map(member =>  
-                    <li class="collection-item"><div>{member.email}<button class="secondary-content valign-wrapper"><i class="material-icons">remove</i></button></div></li>
+                    <li class="collection-item"><div>{member.email}</div></li>
                 )}
             </ul>
         </div>

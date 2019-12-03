@@ -20,7 +20,10 @@ const EventsList = props => {
                                     </ul>
                                 </div>
                                 <div class="card-action">
-                                    <Link to='/'>View</Link>
+                                    <Link to={{
+                                        pathname:'/event',
+                                        state: {eventID: event.eventID}
+                                    }}>View</Link>
                                 </div>
                             </div>
                         </div>
