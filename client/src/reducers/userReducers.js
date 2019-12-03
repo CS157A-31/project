@@ -13,7 +13,11 @@ import {
   ATTEMPT_GET_PARTY_EVENTS_SUCCESSFULLY,
   ATTEMPT_INVITE_PARTY_MEMBER_FAILED,
   ATTEMPT_INVITE_PARTY_MEMBER_SUCCESSFULLY
-} from "../constant";
+  ATTEMPT_CALCULATE_FAILED,
+  ATTEMPT_CALCULATE_SUCCESSFULLY,
+  ATTEMPT_CONTRIBUTE_FAILED,
+  ATTEMPT_CONTRIBUTE_SUCCESSFULLY
+} from '../constant';
 
 export default function(state = { loading: false, errors: null }, action) {
   switch (action.type) {
@@ -27,6 +31,14 @@ export default function(state = { loading: false, errors: null }, action) {
     case ATTEMPT_LOGIN_SUCCESSFULLY:
       return { ...state, ...action.payload, ...{ loading: false } };
     case ATTEMPT_LOGIN_FAILED:
+      return { ...state, ...{ loading: false }, ...{ errors: action.payload } };
+    case ATTEMPT_CALCULATE_SUCCESSFULLY:
+      return { ...state, ...action.payload, ...{ loading: false } };
+    case ATTEMPT_CALCULATE_FAILED:
+      return { ...state, ...{ loading: false }, ...{ errors: action.payload } };
+    case ATTEMPT_CONTRIBUTE_SUCCESSFULLY:
+      return { ...state, ...action.payload, ...{ loading: false } };
+    case ATTEMPT_CONTRIBUTE_FAILED:
       return { ...state, ...{ loading: false }, ...{ errors: action.payload } };
     case GET_USER_IDENTITY_FAILED:
       return {};
