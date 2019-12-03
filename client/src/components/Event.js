@@ -13,8 +13,8 @@ const Event = props => {
       />
 
       <div className='row'>
-        <div className='col s8'>
-          <Link to='/event/new-category-form'>
+        <Link to='/new-category-form'>
+          <div className='col s8'>
             <button
               style={{
                 width: '200px',
@@ -27,8 +27,8 @@ const Event = props => {
             >
               Add Category
             </button>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
         <div className='col s6'>
           <button

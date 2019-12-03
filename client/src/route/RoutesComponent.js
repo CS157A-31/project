@@ -22,8 +22,6 @@ class RoutesComponent extends Component {
   }
 
   render() {
-    const user = this.props.user || {};
-    const isLogin = this.props.isLogin;
     return (
       <div>
         <Route exact path='/' component={LandingPage} />
@@ -51,7 +49,6 @@ class RoutesComponent extends Component {
           path='/new-category-form'
           component={this.convertToPrivateComponent(CreateNewCategory)}
         />
-
         <Route
           path='/party/:partyID'
           component={this.convertToPrivateComponent(GroupPage)}
