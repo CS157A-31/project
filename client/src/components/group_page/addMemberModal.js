@@ -53,7 +53,11 @@ export default function AddMemberModal(props) {
             onClose={handleClose}
          >
             <div style={modalStyle} className={classes.paper}>
-                <AddMemberForm close={handleClose} partyID={props.partyID}/>
+                <AddMemberForm 
+                  close={handleClose} 
+                  partyID={props.partyID}
+                  invite={props.invite
+                }/>
             </div>
         </Modal>
     </div>

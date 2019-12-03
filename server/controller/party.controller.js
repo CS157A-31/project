@@ -21,9 +21,8 @@ partyController.get('/', (req, res) => {
  * GET/
  * Get ALL groups in the DB
  */
-partyController.get('/members', (req, res) => {
-  console.log('members', req);
-  const partyID = req.body.partyID;
+partyController.post('/members', (req, res) => {
+  const { partyID } = req.body;
 
   const getPartyMembersQuery = `SELECT email FROM User 
                                 JOIN (SELECT userID FROM User_Join_Party WHERE User_Join_Party.partyID=${partyID})a
@@ -39,8 +38,8 @@ partyController.get('/members', (req, res) => {
   });
 });
 
-partyController.get('/events', (req, res) => {
-  const partyID = req.body.partyID;
+partyController.post('/events', (req, res) => {
+  const { partyID } = req.body;
 
   const getPartyMembersQuery = `SELECT name, startDate, endDate FROM Event 
                                 JOIN (SELECT eventID FROM Party_Has_Event WHERE Party_Has_Event.partyID=${partyID})a

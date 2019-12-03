@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { attemptInvitePartyMember } from "../../actions/party/invitePartyMemberApiCall";
 
 class AddMemberForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
         partyID: this.props.partyID,
+        invite: this.props.invite,
         email: "",
         errors: {}
     };
@@ -21,7 +21,8 @@ class AddMemberForm extends Component {
   onSubmit(e) {
     console.log(this.state);
     e.preventDefault();
-    attemptInvitePartyMember(this.state);
+    this.state.invite(this.state)
+        .then(res => console.log('then', res));
   }
 
   render() {

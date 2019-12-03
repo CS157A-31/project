@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventsList = props => {
-    console.log(props);
-
     return (
         <div>
             <h3>Events</h3>
@@ -22,7 +20,7 @@ const EventsList = props => {
                                     </ul>
                                 </div>
                                 <div class="card-action">
-                                    <Link to='/'>Event's Page</Link>
+                                    <Link to='/'>View</Link>
                                 </div>
                             </div>
                         </div>

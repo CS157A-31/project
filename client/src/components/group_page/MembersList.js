@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import AddMemberModal from './addMemberModal';
 
 const MembersList = props => {
-    console.log(props);
-
     return ( 
         <div>
             <div class='row valign-wrapper'>
                 <div class="col s5">
                     <h3> Group Members </h3>
                 </div>
-                <AddMemberModal partyID={props.partyID}/>
+                <AddMemberModal 
+                    partyID={props.partyID}
+                    invite={props.invite}
+                />
             </div>
             <hr></hr>
             <ul class="collection with-header">
