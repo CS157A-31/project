@@ -6,9 +6,13 @@ import { bindActionCreators } from 'redux';
 
 import Navbar from './components/Navbar';
 
+<<<<<<< HEAD
 import CustomNavbar from './components/headerComponent/CustomNavbar';
 
 import RouterComponent from './route/RouterCompnent.js';
+=======
+import RouterComponent from "./route/RouterCompnent.js";
+>>>>>>> More UI
 
 import { setUserToken } from './actions/setUserTokenAction';
 

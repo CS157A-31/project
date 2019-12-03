@@ -130,6 +130,7 @@ class HomePage extends Component {
     );
   }
 }
+<<<<<<< HEAD
 //Store
 function mapStateToProps(state) {
   return {
@@ -151,3 +152,7 @@ export default connect(
   mapStateToProps,
   matchDispatchToProps
 )(withRouter(HomePage));
+=======
+
+export default HomePage;
+>>>>>>> More UI

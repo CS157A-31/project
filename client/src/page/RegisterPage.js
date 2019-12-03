@@ -42,8 +42,14 @@ class RegisterPage extends Component {
     const password = { ...this.state.password };
     const user = this.props.user || {};
     const { userID } = user;
+<<<<<<< HEAD
 
     return user.email && userID ? (
+=======
+    console.log("UserID: " + userID);
+
+    return userID ? (
+>>>>>>> More UI
       <Redirect to="/home" />
     ) : (
       <Register

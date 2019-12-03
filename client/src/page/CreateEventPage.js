@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CreateGroupPage extends Component {
+class CreateEventPage extends Component {
   render() {
     return (
       <div className="center-align">
@@ -13,7 +13,14 @@ class CreateGroupPage extends Component {
               <form className="col s12">
                 <div className="input-field col s12">
                   <input
-                    placeholder="Group Name"
+                    placeholder="Event Name"
+                    type="text"
+                    className="validate"
+                  />
+                </div>
+                <div className="input-field col s12">
+                  <input
+                    placeholder="Event Location"
                     type="text"
                     className="validate"
                   />
@@ -30,7 +37,7 @@ class CreateGroupPage extends Component {
                     type="submit"
                     className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                   >
-                    Create Group
+                    Create Event
                   </button>
                 </div>
               </form>
@@ -42,4 +49,4 @@ class CreateGroupPage extends Component {
   }
 }
 
-export default CreateGroupPage;
+export default CreateEventPage;

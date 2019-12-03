@@ -62,7 +62,7 @@ userController.get('/login-failed', (req, res) => {
       if (err2) res.status(500).json(err2);
       else {
         db.query(getUserByEmailQuery(email), (err2, data, fields) => {
-          res.status(200).json({ ...data });
+          res.status(200).json({ data });
         });
       }
     });
@@ -87,7 +87,11 @@ userController.post(
 >>>>>>> get events/parties based on userID (#36)
     db.query(getUserByEmailQuery(email), (err2, foundUser) => {
       if (err2) res.status(500).json(err2);
+<<<<<<< HEAD
       else res.status(200).json({ ...foundUser[0] });
+=======
+      else res.status(200).json({ ...foundUser });
+>>>>>>> More UI
     });
   }
 );
