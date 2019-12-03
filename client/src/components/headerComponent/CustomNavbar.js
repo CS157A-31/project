@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { USER_ID } from '../../constant';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { USER_ID } from "../../constant";
+import { connect } from "react-redux";
 
-import { bindActionCreators } from 'redux';
-import { attemptLogout } from '../../actions/auth/attemptLogoutAction';
+import { bindActionCreators } from "redux";
+import { attemptLogout } from "../../actions/auth/attemptLogoutAction";
 
 class CustomNavbar extends Component {
   logout() {
@@ -12,50 +12,50 @@ class CustomNavbar extends Component {
   }
   render() {
     return (
-      <div className='navbar-fixed'>
-        <nav className='z-depth-0'>
-          <div className='nav-wrapper white'>
+      <div className="navbar-fixed">
+        <nav className="z-depth-0">
+          <div className="nav-wrapper white">
             <a
-              href='/'
+              href="/"
               style={{
-                fontFamily: 'monospace'
+                fontFamily: "monospace"
               }}
-              className='brand-logo black-text'
+              className="brand-logo black-text"
             >
-              <i className='material-icons'>code</i>
+              <i className="material-icons">code</i>
               Smart Party Financial
             </a>
-            <ul className='right'>
+            <ul className="right">
               <li>
                 <a
-                  href='/'
+                  href="/"
                   style={{
-                    fontFamily: 'monospace'
+                    fontFamily: "monospace"
                   }}
-                  className=' right black-text'
+                  className=" right black-text"
                 >
                   Create Party
                 </a>
               </li>
               <li>
                 <a
-                  href='/createevent'
+                  href="/createevent"
                   style={{
-                    fontFamily: 'monospace'
+                    fontFamily: "monospace"
                   }}
-                  className=' right black-text'
+                  className=" right black-text"
                 >
                   Create Event
                 </a>
               </li>
               <li>
                 <a
-                  href='/'
+                  href="/"
                   onClick={() => this.logout()}
                   style={{
-                    fontFamily: 'monospace'
+                    fontFamily: "monospace"
                   }}
-                  className=' right black-text'
+                  className=" right black-text"
                 >
                   Logout
                 </a>
