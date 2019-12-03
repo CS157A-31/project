@@ -10,7 +10,7 @@ import { HOST, PARTY_URI } from '../../constant';
 // Register
 export const attemptGetPartyMembers = partyData => dispatch => {
   axios
-    .post(`${HOST}${PARTY_URI}`, partyData)
+    .get(`${HOST}${PARTY_URI+'/members'}`, partyData)
     .then(res => {
       console.log('attempt get members callAPI');
       console.log(res.data);

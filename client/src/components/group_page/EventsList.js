@@ -2,21 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventsList = props => {
+    console.log(props);
+
     return (
         <div>
-            <h2>Events</h2>
+            <h3>Events</h3>
             <hr></hr>
-            {this.props.events.map(event => 
-                ( 
-                    <div class="row">
-                        <div class="col s12 m6">
-                            <div class="card small blue-grey darken-1">
+            <div class="row">
+                {props.events.map(event => 
+                    ( 
+                        <div class="col s1 m3">
+                            <div class="card small teal darken-2 z-depth-3">
                                 <div class="card-content white-text">
                                     <span class="card-title">{event.name}</span>
                                     <ul>
                                         <li>{event.location}</li>
-                                        <li>{event.start}-{event.end}</li>
-                                        <li>{event.time}</li>
+                                        <li>Start Date: {event.startDate}</li>
+                                        <li>End Date: {event.endDate}</li>
                                     </ul>
                                 </div>
                                 <div class="card-action">
@@ -24,9 +26,9 @@ const EventsList = props => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                )
-            )}
+                    )
+                )}
+            </div>
         </div>
     )
 }
