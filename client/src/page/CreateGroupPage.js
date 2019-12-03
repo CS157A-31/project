@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 
 class CreateGroupPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      partyID: null
+    };
+  }
+  handleParty = partyID => {
+    this.setState({
+      partyID
+    });
+  };
+
   render() {
     return (
       <div className="center-align">
@@ -9,7 +21,7 @@ class CreateGroupPage extends Component {
           className="container valign-wrapper "
         >
           <div style={{ marginTop: "4rem" }} className="row">
-            <div className="col s6 ">
+            <div className="col s12 ">
               <form className="col s12">
                 <div className="input-field col s12">
                   <input
@@ -21,6 +33,7 @@ class CreateGroupPage extends Component {
 
                 <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                   <button
+                    onClick={() => this.props.handleParty(this.props.orderID)}
                     style={{
                       width: "120px",
                       borderRadius: "2px",

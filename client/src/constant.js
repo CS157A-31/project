@@ -8,7 +8,12 @@ export const PARTY_URI = '/party';
 =======
 export const REGISTER_URI = "/register";
 export const LOGIN_URI = "/login";
+<<<<<<< HEAD
 >>>>>>> More UI
+=======
+export const EVENTS_URI = "/events";
+export const GROUPS_URI = "/groups";
+>>>>>>> updating UI and routing
 
 // Errors
 export const GET_ERRORS = 'GET_ERRORS';

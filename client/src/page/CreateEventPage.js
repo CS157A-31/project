@@ -9,7 +9,7 @@ class CreateEventPage extends Component {
           className="container valign-wrapper "
         >
           <div style={{ marginTop: "4rem" }} className="row">
-            <div className="col s6 ">
+            <div className="col s12 ">
               <form className="col s12">
                 <div className="input-field col s12">
                   <input
