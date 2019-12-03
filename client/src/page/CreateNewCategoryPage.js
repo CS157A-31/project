@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Redirect, withRouter } from 'react-router-dom';
 
-import { attemptLogin } from '../actions/login/loginApiCall';
+import { attemptContribute } from '../actions/attemptContribute/contributeApiCall';
 
-import Login from '../components/auth/Login.js';
+import CreateNewCategory from '../components/CreateNewCategory.js';
 
-class LoginPage extends Component {
+class CreateNewCategoryPage extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
+      category: '',
+      moneyAmount: '',
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -26,35 +26,28 @@ class LoginPage extends Component {
   onClick = e => {
     e.preventDefault();
 
-    this.props.attemptLogin({
-      email: this.state.email,
-      password: this.state.password
+    this.props.attemptContribute({
+      name: this.props.user,
+      moneyAmount: this.state.moneyAmount,
+      userID: getTokenFromLocalStorage('userID')
     });
   };
 
   render() {
+    console.log('create new category');
     const errors = { ...this.state.errors };
-    const email = { ...this.state.email };
-    const password = { ...this.state.password };
+    const category = { ...this.state.category };
+    const moneyAmount = { ...this.state.moneyAmount };
     const user = this.props.user || {};
-    const { userID } = user;
-<<<<<<< HEAD
-    console.log('User is: ' + user);
 
-    return user.email && userID ? (
+    return user.data.insertID ? (
       <Redirect to='/home' />
-=======
-    console.log("User is: " + user);
-
-    return user.email && userID ? (
-      <Redirect to="/home" />
->>>>>>> Fix Login API and UI (#38)
     ) : (
-      <Login
+      <CreateNewCategory
         onChange={e => this.onChange(e)}
         onClick={e => this.onClick(e)}
-        email={email}
-        password={password}
+        category={category}
+        moneyAmount={moneyAmount}
         errors={errors}
       />
     );
@@ -69,10 +62,10 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ attemptLogin }, dispatch);
+  return bindActionCreators({ attemptContribute }, dispatch);
 }
 
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(withRouter(LoginPage));
+)(withRouter(CreateNewCategoryPage));

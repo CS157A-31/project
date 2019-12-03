@@ -25,6 +25,7 @@ userController.post('/', (req, res) => {
 
 userController.post('/register', (req, res) => {
   const { email, password } = req.body;
+<<<<<<< HEAD
   db.query(getUserByEmailQuery(email), (err, foundEmail, fields2) => {
     if (err) res.status(500).json(err);
     else {
@@ -53,6 +54,24 @@ userController.post('/register', (req, res) => {
 
 userController.get('/login-failed', (req, res) => {
   res.status(403).json({ message: 'User enter wrong password' });
+=======
+
+  bcrypt.hash(password, 10, (err, hashedPassword) => {
+    const createUserQuery = `INSERT into User(email, password) values('${email}', '${hashedPassword}')`;
+    db.query(createUserQuery, (err2, createdUser, fields) => {
+      if (err2) res.status(500).json(err2);
+      else {
+        db.query(getUserByEmailQuery(email), (err2, data, fields) => {
+          res.status(200).json({ ...data });
+        });
+      }
+    });
+  });
+});
+
+userController.get("/login-failed", (req, res) => {
+  res.status(403).json({ message: "User enter wrong password" });
+>>>>>>> get events/parties based on userID (#36)
 });
 
 userController.post(
@@ -62,7 +81,10 @@ userController.post(
   }),
   (req, res) => {
     const { email } = req.body;
+<<<<<<< HEAD
 
+=======
+>>>>>>> get events/parties based on userID (#36)
     db.query(getUserByEmailQuery(email), (err2, foundUser) => {
       if (err2) res.status(500).json(err2);
       else res.status(200).json({ ...foundUser[0] });
