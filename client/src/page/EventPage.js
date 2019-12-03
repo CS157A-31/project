@@ -15,10 +15,7 @@ class EventPage extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      name: '',
-      moneyAmount: '',
-      average: 0,
+      categories: {},
       errors: {}
     };
   }
@@ -27,12 +24,14 @@ class EventPage extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  componentWillMount() {
-    this.props.attemptGetEventDetail({ eventID: 1 });
+  async componentDidMount() {
+    const { eventID } = this.props.match.params;
+    this.props.attemptGetEventDetail(eventID);
   }
 
   onClickCalculate = e => {
     e.preventDefault();
+    console.log('calculate');
 
     this.props.attemptCalculate({
       average: this.state.average,
@@ -40,55 +39,32 @@ class EventPage extends Component {
     });
   };
 
-  onClickAddNewRow = e => {
-    const currentState = Object.assign({}, this.state);
-
-    const newRow = ['', '', ''];
-    currentState.data.push(newRow);
-    this.setState(currentState, () => {});
-  };
-
-  onClickContribute = e => {
-    e.preventDefault();
-    // Add a new row
-    const newRow = ['', '', ''];
-
-    this.state.data.push(newRow);
-
-    this.props.attemptContribute({
-      name: this.state.name,
-      moneyAmount: this.state.moneyAmount,
-      userID: getTokenFromLocalStorage('userID')
-    });
-  };
-
   render() {
-    const columns = ['Category', 'Amount Money', 'Total'];
-
-    // const data = [
-    //   ['Joe James', 'Test Corp', 'Yonkers'],
-    //   ['John Walsh', 'Test Corp', 'Hartford'],
-    //   ['Bob Herm', 'Test Corp', 'Tampa'],
-    //   ['James Houston', 'Test Corp', 'Dallas']
-    // ];
-
-    const options = { filterType: 'checkbox' };
-
-    // const data = { ...this.state.date };
-
-    const errors = { ...this.state.errors };
     const user = this.props.user || {};
-    const { userID, data } = user;
-    console.log('User is: ' + user);
+    const categoryList = [];
+    const list = user.list || {};
+    const categoryArray = Object.keys(list).map(i => list[i]);
+    let i = 1;
+    categoryArray.map(categoryItem => {
+      const newCategory = [
+        i,
+        categoryItem.email,
+        categoryItem.category,
+        categoryItem.amount
+      ];
+      categoryList.push(newCategory);
+      i += 1;
+    });
+
+    const columns = ['ID', 'Name', 'Category', 'Amount Money'];
+    const options = { filterType: 'checkbox' };
 
     return (
       <Event
-        data={data}
+        data={categoryList}
         columns={columns}
         options={options}
-        onClickCalculate={e => this.onClick(e)}
-        onClickContribute={e => this.onClick(e)}
-        onClickAddNewRow={e => this.onClick(e)}
+        onClickCalculate={e => this.onClickCalculate(e)}
       />
     );
   }

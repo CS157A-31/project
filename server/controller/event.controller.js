@@ -18,19 +18,37 @@ eventController.get('/', (req, res) => {
 });
 
 /**
- * Get List of Events by user Email
+ * Get List of Events by user ID
  */
-eventController.get('/:id', (req, res) => {
+eventController.get('/user/:userID', (req, res) => {
   const query = `SELECT eventID, name, startDate, endDate, email FROM Event
       JOIN User_Join_Event USING(eventID)
-      JOIN (SELECT userID, email from User WHERE userID LIKE ${req.params.id}) userTable USING (userID);`;
+      JOIN (SELECT userID, email from User WHERE userID LIKE ${req.params.userID}) userTable USING (userID);`;
 
   db.query(query, (err, data) => {
     if (err) {
       console.log('Error while performing Query.' + err);
     } else {
       const returnData = { ...data };
-      res.status(200).json(returnData);
+
+      res.status(200).json(data);
+    }
+  });
+});
+
+eventController.get('/:eventID', (req, res) => {
+  const query = `SELECT email, category, amount
+  FROM User_Contribute_Event
+  JOIN User USING(userID)
+  WHERE eventID = ${req.params.eventID};`;
+
+  db.query(query, (err, data) => {
+    if (err) {
+      console.log('Error while performing Query.' + err);
+    } else {
+      const returnData = { ...data };
+      console.log(...data);
+      res.status(200).json(data);
     }
   });
 });

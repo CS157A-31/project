@@ -8,9 +8,11 @@ import {
 import { HOST, EVENT_URI } from '../../constant';
 
 // Contribute
-export const attemptGetEventDetail = userData => dispatch => {
+export const attemptGetEventDetail = eventID => dispatch => {
+  console.log('Get event detail');
+  console.log(eventID);
   axios
-    .post(`${HOST}${EVENT_URI}/${userData.eventID}`, userData)
+    .get(`${HOST}${EVENT_URI}/${eventID}`)
     .then(res => {
       return dispatch(attemptGetEventDetailSuccessfully(res.data));
     })
