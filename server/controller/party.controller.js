@@ -45,11 +45,11 @@ partyController.post('/members', (req, res) => {
 partyController.post('/events', (req, res) => {
   const { partyID } = req.body;
 
-  const getPartyMembersQuery = `SELECT eventID, name, startDate, endDate FROM Event 
+  const getPartyEventsQuery = `SELECT eventID, name, startDate, endDate FROM Event 
                                 JOIN (SELECT eventID FROM Party_Has_Event WHERE Party_Has_Event.partyID=${partyID})a
                                 USING(eventID)`;
 
-  db.query(getPartyMembersQuery, (err, data) => {
+  db.query(getPartyEventsQuery, (err, data) => {
     if (err) {
       console.log(err);
     } else {

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { attemptGetPartyMembers } from "../actions/party/getPartyMembersApiCall";
 import { attemptGetPartyEvents } from "../actions/party/getPartyEventsApiCall";
 import { attemptInvitePartyMember } from "../actions/party/invitePartyMemberApiCall";
 import { attemptDeleteUserFromParty } from "../actions/deleteUserFromParty/deleteUserFromPartyApiCall";
-
+import { attemptCreatePartyEvent } from "../actions/party/createPartyEventApiCall";
 import EventsList from '../components/group_page/EventsList.js';
 import Memberslist from '../components/group_page/MembersList.js';
 
@@ -59,14 +58,25 @@ class GroupPage extends Component {
             });
     }
 
+    addEvent = (data) => {
+        this.props.attemptCreatePartyEvent(data)
+            .then(res => {
+                this.setState({events: res.payload});
+            });
+    }
+
     render() {
         return (
             <div>
-                <EventsList events={this.state.events}/>
+                <EventsList 
+                    partyID={this.state.partyID}
+                    events={this.state.events}
+                    create={this.addEvent}
+                />
                 <Memberslist 
                     partyID={this.state.partyID} 
                     members={this.state.members} 
-                    invite={this.props.attemptInvitePartyMember}
+                    invite={this.addUser}
                     delete={this.deleteUser}
                 />
             </div>
@@ -87,7 +97,8 @@ function matchDispatchToProps(dispatch) {
         attemptGetPartyEvents,
         attemptGetPartyMembers,
         attemptInvitePartyMember,
-        attemptDeleteUserFromParty
+        attemptDeleteUserFromParty,
+        attemptCreatePartyEvent
      }, dispatch);
 }
   
