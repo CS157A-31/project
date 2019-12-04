@@ -14,9 +14,9 @@ import Memberslist from '../components/group_page/MembersList.js';
 class GroupPage extends Component {
     constructor(props) {
         super(props);
+        const { partyID } = this.props.match.params;
         this.state = {
             partyID: this.props.partyID,
-            partyName: this.props.partyName,
             events: [],
             members: [],
             errors: {}
@@ -42,7 +42,6 @@ class GroupPage extends Component {
     render() {
         return (
             <div>
-                <h1>{this.state.partyName}</h1> 
                 <EventsList events={this.state.events}/>
                 <Memberslist 
                     partyID={this.state.partyID} 
