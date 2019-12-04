@@ -24,7 +24,7 @@ partyController.get('/', (req, res) => {
 partyController.post('/members', (req, res) => {
   const { partyID } = req.body;
 
-  const getPartyMembersQuery = `SELECT email FROM User 
+  const getPartyMembersQuery = `SELECT email, userID FROM User 
                                 JOIN (SELECT userID FROM User_Join_Party WHERE User_Join_Party.partyID=${partyID})a
                                 USING(userID)`;
 
@@ -138,33 +138,7 @@ partyController.post('/invite', (req, res) => {
   db.query(getUserByEmailQuery, (err, foundUser) => {
     if (err) return res.status(500).json(err);
     else if (foundUser.length == 0)
-      return res.status(404).json({ message: `User Email: ${name} not Found` });
-
-    const joinPartyQuery = `INSERT INTO User_Join_Party values('${foundUser[0].userID}', '${partyID}')`;
-
-    db.query(joinPartyQuery, (err1, data) => {
-      if (err1) return res.status(500).json(err1);
-      return res.status(200).json({ data });
-    });
-  });
-});
-
-/**
- * POST/
- * Delete party
- */
-partyController.post('/delete', (req, res) => {
-  const { partyID } = req.body;
-
-  const removeFromPartyQuery = `DELETE FROM Party WHERE partyID = '${partyID}'`;
-  const removeFromUserJoinPartyQuery = `DELETE FROM User_Join_Party WHERE partyID = '${partyID}'`;
-  const removeFromUserFormPartyQuery = `DELETE FROM User_Form_Party WHERE partyID = '${partyID}'`;
-  const removeFromPartyHasEventQuery = `DELETE FROM Party_Has_Event WHERE partyID = '${partyID}'`;
-
-  db.query(getUserByEmailQuery, (err, foundUser) => {
-    if (err) return res.status(500).json(err);
-    else if (foundUser.length == 0)
-      return res.status(404).json({ message: `User Email: ${name} not Found` });
+      return res.status(404).json({ message: `User Email: ${email} not Found` });
 
     const joinPartyQuery = `INSERT INTO User_Join_Party values('${foundUser[0].userID}', '${partyID}')`;
 
