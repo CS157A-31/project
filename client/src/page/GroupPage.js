@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -70,6 +70,6 @@ function matchDispatchToProps(dispatch) {
 }
   
 export default connect(
-    mapStateToProps,
-    matchDispatchToProps
-  )(withRouter(GroupPage));
+  mapStateToProps,
+  matchDispatchToProps
+)(withRouter(GroupPage));
