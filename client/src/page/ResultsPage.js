@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -15,10 +16,29 @@ class ResultsPage extends Component {
       users: {},
       eventID: eventID,
       list: [],
+=======
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Redirect, withRouter } from "react-router-dom";
+
+import Results from "../components/Results";
+
+import { attemptCalculate } from "../actions/attemptCalculate/calculateApiCall";
+
+import { getTokenFromLocalStorage } from "../utils";
+
+class ResultsPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      users: {},
+>>>>>>> result page
       errors: {}
     };
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     this.props.attemptGetResult({ eventID: this.state.eventID });
   }
@@ -47,6 +67,30 @@ class ResultsPage extends Component {
         data={resultArray}
         eventID={this.state.eventID}
         columns={columns}
+=======
+  onClickCalculate = e => {
+    e.preventDefault();
+    console.log("calculate");
+
+    this.props.attemptCalculate({
+      average: this.state.average,
+      userID: getTokenFromLocalStorage("userID")
+    });
+  };
+
+  render() {
+    const user = this.props.user || {};
+    const list = user.list || {};
+    const userList = ["john", "stan", "smith"];
+
+    const columns = ["Payee Email", "Recipient Email", "Amount Money"];
+
+    return (
+      <Results
+        data={userList}
+        columns={columns}
+        onClickCalculate={e => this.onClickCalculate(e)}
+>>>>>>> result page
       />
     );
   }
@@ -60,7 +104,11 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
+<<<<<<< HEAD
   return bindActionCreators({ attemptGetResult }, dispatch);
+=======
+  return bindActionCreators({ attemptCalculate }, dispatch);
+>>>>>>> result page
 }
 
 export default connect(
