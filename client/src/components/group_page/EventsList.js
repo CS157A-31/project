@@ -31,8 +31,7 @@ const EventsList = props => {
                                 </div>
                                 <div class="card-action">
                                     <Link to={{
-                                        pathname:'/event',
-                                        state: {eventID: event.eventID}
+                                        pathname:'/event/'+event.eventID
                                     }}>View</Link>
                                 </div>
                             </div>
