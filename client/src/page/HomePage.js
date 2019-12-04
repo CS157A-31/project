@@ -50,6 +50,7 @@ class HomePage extends Component {
 
   render() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const events = this.state.events || [];
     //const eventsTable = this.state.events || [];
     // const parties = this.state.parties || [];
@@ -149,6 +150,11 @@ class HomePage extends Component {
     //     </div>
     //   </div>
 =======
+=======
+    const events = this.state.events || [];
+    const parties = this.state.parties || [];
+
+>>>>>>> homepage
     return this.state.selectedRow ? (
       <Redirect to={`/event/${this.state.selectedRow.eventID}`} />
     ) : (
@@ -168,7 +174,7 @@ class HomePage extends Component {
                 </li>
                 <li class="collection-item">
                   <div>
-                    Group 1
+                    {this.parties}
                     <a href="#!" class="secondary-content">
                       <i class="material-icons">send</i>
                     </a>
