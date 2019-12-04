@@ -181,4 +181,34 @@ eventController.post('/:eventID/calculate', (req, res) => {
   });
 });
 
+/**
+ * POST/
+ * Delete user from party
+ */
+eventController.post('/removeUser', (req, res) => {
+  const { userID, eventID } = req.body;
+
+  const removeUserFromPartyQuery = `DELETE FROM User_Join_Event WHERE userID = '${userID}' AND eventID = '${eventID}'`;
+
+
+  db.query(removeUserFromPartyQuery, (err, removedUser) => {
+    if (err) return res.status(500).json(err);
+    else if(removedUser.affectedRows==0)
+      return res.status(404).json({ message: `User Email: ${userID} not Found` });
+    
+    const getEventMembersQuery = `SELECT email FROM User 
+    JOIN (SELECT userID FROM User_Join_Event WHERE User_Join_Event.eventID=${eventID})a
+    USING(userID)`;
+
+    db.query(getEventMembersQuery, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        const returnData = [...data];
+        res.status(200).json(returnData);
+      }
+    });
+  });
+});
+
 export default eventController;
