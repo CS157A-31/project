@@ -7,10 +7,6 @@ import { Redirect, withRouter } from "react-router-dom";
 import { attemptGetPartyMembers } from "../actions/party/getPartyMembersApiCall";
 import { attemptGetPartyEvents } from "../actions/party/getPartyEventsApiCall";
 import { attemptInvitePartyMember } from "../actions/party/invitePartyMemberApiCall";
-
-import { attemptGetPartyMembers } from "../actions/party/getPartyMembersApiCall";
-import { attemptGetPartyEvents } from "../actions/party/getPartyEventsApiCall";
-import { attemptInvitePartyMember } from "../actions/party/invitePartyMemberApiCall";
 import { attemptDeleteUserFromParty } from "../actions/deleteUserFromParty/deleteUserFromPartyApiCall";
 import { attemptCreatePartyEvent } from "../actions/party/createPartyEventApiCall";
 import EventsList from "../components/group_page/EventsList.js";

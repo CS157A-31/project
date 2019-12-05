@@ -6,6 +6,9 @@ import { bindActionCreators } from "redux";
 import { attemptGetPartiesByUserId } from "../actions/homePage/getPartiesByUserIdApiCall";
 import { attemptGetEventsByUserId } from "../actions/homePage/getEventsByUserIdApiCall";
 
+import EventsListHome from "../components/group_page/EventsListHome.js";
+import PartiesListHome from "../components/group_page/PartiesListHome.js";
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +23,11 @@ class HomePage extends Component {
     this.setState({ ...this.state, ...{ selectedRow } });
   }
 
+<<<<<<< HEAD
   async componentDidMount() {
+=======
+  async componentWillMount() {
+>>>>>>> home page
     this.props
       .attemptGetEventsByUserId()
       .then(res => {
@@ -51,22 +58,40 @@ class HomePage extends Component {
   render() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const events = this.state.events || [];
+=======
+    return (
+      <div>
+        <EventsListHome
+          partyID={this.state.partyID}
+          events={this.state.events}
+        />
+        <PartiesListHome
+          partyID={this.state.partyID}
+          parties={this.state.parties}
+          // events={this.state.events}
+        />
+      </div>
+    );
+
+    // const events = this.state.events || [];
+>>>>>>> home page
     //const eventsTable = this.state.events || [];
     // const parties = this.state.parties || [];
 
-    const parties = this.state.parties || [];
+    // const parties = this.state.parties || [];
     //console.log(events);
 
     //events.push(<td>{`Column ${i + 1}`}</td>);
-    events.map(event => {
-      console.log(event);
-      // <li>event</li>;
-    });
+    // events.map(event => {
+    //   console.log(event);
+    // <li>event</li>;
+    // });
 
     // console.log(events[i]);
 
-    return <div>Hello</div>;
+    // return <div>Hello</div>;
 
     // return this.state.selectedRow ? (
     //  <Redirect to={`/event/${this.state.selectedRow.eventID}`} />
@@ -242,7 +267,8 @@ class HomePage extends Component {
 //Store
 function mapStateToProps(state) {
   return {
-    user: state.user
+    user: state.user,
+    data: state.user.data
   };
 }
 

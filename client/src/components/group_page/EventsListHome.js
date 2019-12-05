@@ -3,14 +3,20 @@ import { Link } from "react-router-dom";
 
 import AddEventModal from "./addEventModal";
 
-const EventsList = props => {
+const EventsListHome = props => {
   return (
     <div>
-      <div className="row valign-wrapper">
-        <div className="col s5">
-          <h3> Events </h3>
+      <div className="col s6 container valign-wrapper">
+        <div className="col s12">
+          <h3
+            style={{
+              fontFamily: "monospace"
+            }}
+            className="brand-logo black-text"
+          >
+            My Events
+          </h3>
         </div>
-        <AddEventModal partyID={props.partyID} create={props.create} />
       </div>
       <hr></hr>
       <div className="row">
@@ -42,4 +48,4 @@ const EventsList = props => {
   );
 };
 
-export default EventsList;
+export default EventsListHome;
