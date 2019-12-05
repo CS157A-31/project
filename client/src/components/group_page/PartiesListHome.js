@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import AddEventModal from "./addEventModal";
-
 const PartiesListHome = props => {
   return (
     <div>
@@ -14,7 +12,7 @@ const PartiesListHome = props => {
             }}
             className="brand-logo black-text"
           >
-            My Groups
+            My Parties
           </h3>
         </div>
       </div>

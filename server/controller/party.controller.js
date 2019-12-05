@@ -66,11 +66,7 @@ partyController.post("/members", (req, res) => {
 partyController.post("/events", (req, res) => {
   const { partyID } = req.body;
 
-<<<<<<< HEAD
-  const getPartyMembersQuery = `SELECT eventID, name, startDate, endDate FROM Event 
-=======
   const getPartyEventsQuery = `SELECT eventID, name, startDate, endDate FROM Event 
->>>>>>> home page
                                 JOIN (SELECT eventID FROM Party_Has_Event WHERE Party_Has_Event.partyID=${partyID})a
                                 USING(eventID)`;
 

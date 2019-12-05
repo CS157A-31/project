@@ -13,7 +13,6 @@ import RouterComponent from "./route/RouterCompnent.js";
 import { setUserToken } from "./actions/auth/setUserTokenAction";
 
 import { USER_ID } from "./constant";
-import CustomNavbar from "./components/headerComponent/CustomNavbar";
 
 class App extends Component {
   constructor(props) {

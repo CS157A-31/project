@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { HOST, EVENT_URI } from '../../constant';
+import { HOST, EVENT_URI } from "../../constant";
 
-import { getTokenFromLocalStorage } from '../../utils';
+import { getTokenFromLocalStorage } from "../../utils";
 
 // Contribute
 export const attemptGetEventsByUserId = () => dispatch => {
-  const userID = getTokenFromLocalStorage('userID');
+  const userID = getTokenFromLocalStorage("userID");
   return axios({
-    method: 'get',
-    url: `${HOST}${EVENT_URI + '/user/'}${userID}`
+    method: "get",
+    url: `${HOST}${EVENT_URI + "/user/"}${userID}`
   });
 };
